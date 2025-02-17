@@ -61,20 +61,57 @@ wails3 build
 
 ## Details
 
+Output from `wails3 doctor`:
 ```
-# go version
-go version go1.24.0 darwin/arm64
+wails3 doctor
+ Wails (v3.0.0-alpha.9)  Wails Doctor 
+                                                                                                                                                                                      
+# System 
 
-# wails version
-v3.0.0-alpha.9
+┌──────────────────────────────────────────────────┐
+| Name          | MacOS                            |
+| Version       | 15.3                             |
+| ID            | 24D60                            |
+| Branding      | MacOS 15.3                       |
+| Platform      | darwin                           |
+| Architecture  | arm64                            |
+| Apple Silicon | true                             |
+| CPU           | Apple M1 Max                     |
+| CPU 1         | Apple M1 Max                     |
+| CPU 2         | Apple M1 Max                     |
+| GPU           | 24 cores, Metal Support: Metal 3 |
+| Memory        | 32 GB                            |
+└──────────────────────────────────────────────────┘
 
-# sw_vers
-ProductName:		macOS
-ProductVersion:		15.3
-BuildVersion:		24D60
+# Build Environment 
 
-# uname -p
-arm
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+| Wails CLI      | v3.0.0-alpha.9                                                                                                                                                                                                           |
+| Go Version     | go1.24.0                                                                                                                                                                                                                 |
+| -buildmode     | exe                                                                                                                                                                                                                      |
+| -compiler      | gc                                                                                                                                                                                                                       |
+| CGO_CFLAGS     |                                                                                                                                                                                                                          |
+| CGO_CPPFLAGS   |                                                                                                                                                                                                                          |
+| CGO_CXXFLAGS   |                                                                                                                                                                                                                          |
+| CGO_ENABLED    | 1                                                                                                                                                                                                                        |
+| CGO_LDFLAGS    |                                                                                                                                                                                                                          |
+| DefaultGODEBUG | asynctimerchan=1,gotestjsonbuildtext=1,gotypesalias=0,httpservecontentkeepheaders=1,multipathtcp=0,randseednop=0,rsa1024min=0,tls3des=1,tlsmlkem=0,x509keypairleaf=0,x509negativeserial=1,x509rsacrt=0,x509usepolicies=0 |
+| GOARCH         | arm64                                                                                                                                                                                                                    |
+| GOARM64        | v8.0                                                                                                                                                                                                                     |
+| GOOS           | darwin                                                                                                                                                                                                                   |
+└───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+# Dependencies 
+
+┌────────────────────────────────────────────────────────────────────────┐
+| Xcode cli tools | 2409                                                 |
+| npm             | 10.9.0                                               |
+| *NSIS           | Not Installed. Install with `brew install makensis`. |
+└─────────────────────── * - Optional Dependency ────────────────────────┘
+
+# Diagnosis 
+
+ SUCCESS  Your system is ready for Wails development!
 ```
 
 When I try to `go build` [a simple example](https://duckdb.org/docs/clients/go.html#simple-example) that uses DuckDB without Wails, the build works.
