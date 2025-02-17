@@ -20,9 +20,9 @@ tasks:
       GOOS: darwin
       CGO_ENABLED: 1
       GOARCH: '{{.ARCH | default ARCH}}'
-      CGO_CFLAGS: "-mmacosx-version-min=10.15"
-      CGO_LDFLAGS: "-mmacosx-version-min=10.15"
-      MACOSX_DEPLOYMENT_TARGET: "10.15"
+      # CGO_CFLAGS: "-mmacosx-version-min=11"
+      CGO_LDFLAGS: "-mmacosx-version-min=11"
+      MACOSX_DEPLOYMENT_TARGET: "11"
       PRODUCTION: '{{.PRODUCTION | default "false"}}'
 
   build:universal:
